@@ -26,7 +26,7 @@ def build_embedding_matrix(data_dir, word2idx, embed_dim, type):
         embedding_matrix = np.random.uniform(-1/np.sqrt(embed_dim), 1/np.sqrt(embed_dim), (len(word2idx), embed_dim))
         # <pad>
         embedding_matrix[0, :] = np.zeros((1, embed_dim)) 
-        fname = './glove/glove.840B.300d.txt'
+        fname = 'D:/program/word-vector/glove.840B.300d.txt'
         word_vec = load_word_vec(fname, word2idx=word2idx, embed_dim=embed_dim)
         print('>>> building embedding matrix:', embedding_matrix_file_name)
         for word, i in word2idx.items():
@@ -119,7 +119,7 @@ class ABSADataReader(object):
     def _create_dataset(self, set_type, tokenizer):
         all_data = []
 
-        filename = os.path.join(self.data_dir, '%s.pair' % set_type)
+        filename = os.path.join(self.data_dir, '%s.asote.pair' % set_type)
         fp = open(filename, 'r', encoding='utf-8')
         lines = fp.readlines()
         fp.close()
@@ -139,6 +139,8 @@ class ABSADataReader(object):
             op_spans = []
             triplets = []
             for pair in pairs:
+                if not pair:
+                    continue
                 pair = eval(pair)
                 ap_beg, ap_end = pair[0]
                 op_beg, op_end = pair[1]

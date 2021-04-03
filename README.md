@@ -4,6 +4,17 @@
 * Code and preprocessed dataset for [EMNLP 2020 Findings](https://2020.emnlp.org/) paper titled "[A Multi-task Learning Framework for Opinion Triplet Extraction](https://arxiv.org/abs/2010.01512)" 
 * [Chen Zhang](https://genezc.github.io), [Qiuchi Li](https://qiuchili.github.io), [Dawei Song](http://cs.bit.edu.cn/szdw/jsml/js/sdw/index.htm) and [Benyou Wang](https://wabyking.github.io/old).
 
+## Evaluation on ASOTE
+We folk this repository from the [OTE-MTL repository](https://github.com/GeneZC/OTE-MTL) and evaluate the [OTE-MTL model](https://arxiv.org/pdf/2010.01512.pdf) on the [ASOTE](https://arxiv.org/pdf/2103.15255.pdf) task.
+
+python train.py --model ote --dataset rest14
+
+python train.py --model ote --dataset laptop14
+
+python train.py --model ote --dataset rest15
+
+python train.py --model ote --dataset rest16
+
 ## Updates
 
 * Feb. 20th, 2021. As is pointed out in our paper, we have noted that [datav1](https://github.com/xuuuluuu/SemEval-Triplet-data/tree/master/ASTE-Data-V1-AAAI2020) used in https://arxiv.org/abs/1911.01616 is rather incomplete and have corrected their mistakes. That is, the data used for our experiments is similar to [datav2](https://github.com/xuuuluuu/SemEval-Triplet-data/tree/master/ASTE-Data-V2-EMNLP2020). However, as is requested by some users and in case of any inconsistencies between our data and datav2, we decide to support the test of our model on datav2. You could just run our model on datav2 with just an additional argument *--v2*.
