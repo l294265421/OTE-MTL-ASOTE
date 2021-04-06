@@ -26,7 +26,7 @@ def build_embedding_matrix(data_dir, word2idx, embed_dim, type):
         embedding_matrix = np.random.uniform(-1/np.sqrt(embed_dim), 1/np.sqrt(embed_dim), (len(word2idx), embed_dim))
         # <pad>
         embedding_matrix[0, :] = np.zeros((1, embed_dim)) 
-        fname = 'D:/program/word-vector/glove.840B.300d.txt'
+        fname = 'data/glove.840B.300d.txt'
         word_vec = load_word_vec(fname, word2idx=word2idx, embed_dim=embed_dim)
         print('>>> building embedding matrix:', embedding_matrix_file_name)
         for word, i in word2idx.items():
@@ -120,6 +120,7 @@ class ABSADataReader(object):
         all_data = []
 
         filename = os.path.join(self.data_dir, '%s.asote.pair' % set_type)
+        print('filename: %s' % filename)
         fp = open(filename, 'r', encoding='utf-8')
         lines = fp.readlines()
         fp.close()

@@ -148,7 +148,7 @@ class Instructor:
         f1 = 2 * precision * recall / (precision + recall + 1e-5)
         return [precision, recall, f1]
 
-    def run(self, repeats=10):
+    def run(self, repeats=5):
         if not os.path.exists('log/'):
             os.mkdir('log/')
 

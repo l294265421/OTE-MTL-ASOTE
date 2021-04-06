@@ -7,13 +7,13 @@
 ## Evaluation on ASOTE
 We folk this repository from the [OTE-MTL repository](https://github.com/GeneZC/OTE-MTL) and evaluate the [OTE-MTL model](https://arxiv.org/pdf/2010.01512.pdf) on the [ASOTE](https://arxiv.org/pdf/2103.15255.pdf) task.
 
-python train.py --model ote --dataset rest14
+sh run.sh 4 train.py --model ote --dataset rest14 > rest14.log 2>&1 &
 
-python train.py --model ote --dataset laptop14
+sh run.sh 5 train.py --model ote --dataset laptop14 > laptop14.log 2>&1 &
 
-python train.py --model ote --dataset rest15
+sh run.sh 6 train.py --model ote --dataset rest15 > rest15.log 2>&1 &
 
-python train.py --model ote --dataset rest16
+sh run.sh 7 train.py --model ote --dataset rest16 > rest16.log 2>&1 &
 
 ## Updates
 
