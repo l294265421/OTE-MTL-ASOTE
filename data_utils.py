@@ -119,7 +119,7 @@ class ABSADataReader(object):
     def _create_dataset(self, set_type, tokenizer):
         all_data = []
 
-        filename = os.path.join(self.data_dir, '%s.asote.pair' % set_type)
+        filename = os.path.join(self.data_dir, '%s.asote.v2.pair' % set_type)
         print('filename: %s' % filename)
         fp = open(filename, 'r', encoding='utf-8')
         lines = fp.readlines()
